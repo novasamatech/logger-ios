@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -11,6 +11,7 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: name, path: "Sources")
+        .target(name: name, path: "Sources"),
+        .testTarget(name: "\(name)Tests", dependencies: [.target(name: name)], path: "Tests")
     ]
 )
