@@ -17,7 +17,7 @@ private final class EvaluationCounter {
 /// suite: the protocol requirement hands us a `() -> String` we may choose never
 /// to call. The closure is non-escaping, so an emitting conformer must evaluate
 /// it synchronously within the call.
-private final class MockLogger: SDKLoggerProtocol {
+private final class MockLogger: SDKLoggerProtocol, @unchecked Sendable {
     enum Level: CaseIterable { case verbose, debug, info, warning, error }
 
     let evaluatesMessage: Bool

@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol SDKLoggerProtocol {
+public protocol SDKLoggerProtocol: Sendable {
     func verbose(message: () -> String, file: String, function: String, line: Int)
     func debug(message: () -> String, file: String, function: String, line: Int)
     func info(message: () -> String, file: String, function: String, line: Int)
